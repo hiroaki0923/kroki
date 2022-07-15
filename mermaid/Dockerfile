@@ -32,7 +32,8 @@ RUN addgroup -g 1000 kroki && adduser -D -G kroki -u 1000 kroki
 
 RUN apk add --quiet --no-cache --update \
   chromium \
-  font-noto-cjk
+  font-noto-cjk \
+  font-noto
 
 COPY --from=builder /app/app.bin /usr/bin/mermaid
 COPY --chown=kroki:kroki assets /usr/local/kroki/assets
